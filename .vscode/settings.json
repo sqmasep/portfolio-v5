@@ -1,0 +1,32 @@
+{
+  // Prettier
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "prettier.arrowParens": "avoid",
+  "files.autoSave": "onFocusChange",
+
+  // ESLint
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  // Tailwind
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass"],
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    ["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+
+  // Better comments
+  "better-comments.tags": [
+    { "tag": "TODO", "color": "#00FFF2" },
+    { "tag": "WARN", "color": "#FF8C00" },
+    { "tag": "FIXME", "color": "#F1411A" },
+    { "tag": "DANGER [SECURITY]", "color": "#e55", "bold": true },
+    { "tag": "DANGER", "color": "#e55" },
+    { "tag": "INFO", "color": "#3498DB", "italic": true },
+    { "tag": "//", "color": "#474747", "strikethrough": true }
+  ]
+}

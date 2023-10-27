@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "aaron-bond.better-comments",
+    "tailwindlabs.tailwindcss-intellisense",
+    "usernamehw.errorlens",
+    "wix.vscode-import-cost"
+  ]
+}
