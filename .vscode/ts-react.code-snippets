@@ -10,13 +10,13 @@
   "NextPage": {
     "prefix": "np",
     "body": [
-      "import type {NextPage} from \"next\"",
+      "import type { NextPage } from \"next\";",
       "",
-      "const ${TM_FILENAME_BASE}: NextPage = () => {",
-      "\treturn <div>$0</div>",
-      "}",
+      "const $1Page: NextPage = () => {",
+      "\treturn <div>$0</div>;",
+      "};",
       "",
-      "export default ${TM_FILENAME_BASE};"
+      "export default $1Page;"
     ],
     "description": "Generate a NextPage template"
   },
