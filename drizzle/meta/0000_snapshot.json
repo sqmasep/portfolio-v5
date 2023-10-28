@@ -1,0 +1,38 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "id": "9aa20cb0-c3b1-418c-b4d6-758c8d4137b4",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "tables": {
+    "like": {
+      "name": "like",
+      "columns": {
+        "count": {
+          "name": "count",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": 0
+        },
+        "last_updated": {
+          "name": "last_updated",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}
