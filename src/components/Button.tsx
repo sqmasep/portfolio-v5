@@ -9,18 +9,19 @@ interface ButtonProps {
 }
 
 const button = tv({
+  base: "flex items-center rounded-full gap-2",
   variants: {
     isFullWidth: {
       true: "w-full",
     },
     variant: {
-      primary: "",
+      primary: "text-black bg-white",
       secondary: "",
       glass: "",
     },
     size: {
       sm: "",
-      md: "",
+      md: "px-4 py-2",
       lg: "",
     },
   },
@@ -38,8 +39,18 @@ const Button: React.FC<
       React.ComponentPropsWithoutRef<"button">,
       keyof VariantProps<typeof button> | keyof ButtonProps
     >
-> = ({ ...props }) => {
-  return <button type="button" {...props} />;
+> = ({ startIcon, endIcon, children, className, variant, size, ...props }) => {
+  return (
+    <button
+      type="button"
+      {...props}
+      className={button({ className, variant, size })}
+    >
+      {startIcon}
+      {children}
+      {endIcon}
+    </button>
+  );
 };
 
 export default Button;
