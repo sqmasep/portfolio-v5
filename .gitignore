@@ -4,6 +4,9 @@
 !/.vscode/settings.json
 !/.vscode/*.code-snippets
 
+# database
+*.db
+
 # dependencies
 /node_modules
 /.pnp

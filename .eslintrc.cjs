@@ -16,5 +16,7 @@ module.exports = {
     "arrow-body-style": "off",
     "new-cap": "off",
     "no-duplicate-imports": "off",
+    "@next/next/no-async-client-component": "error",
+    "react/function-component-definition": "off",
   },
 };
