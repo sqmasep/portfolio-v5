@@ -2,33 +2,37 @@
 
 import type { VariantProps } from "tailwind-variants";
 import { tv } from "tailwind-variants";
+import { motion } from "framer-motion";
+import type { WithChildren } from "../../types";
+import { clickableVariants } from "~/animations/clickable";
 
-interface ButtonProps {
+interface ButtonProps extends WithChildren {
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
 }
 
 const button = tv({
-  base: "flex items-center rounded-full gap-2",
+  base: "rounded-full",
+
   variants: {
     isFullWidth: {
       true: "w-full",
     },
-    variant: {
-      primary: "text-black bg-white",
+    color: {
+      primary: "text-black bg-white hover:bg-[#F2F2F2]",
       secondary: "",
       glass: "",
     },
     size: {
-      sm: "",
-      md: "px-4 py-2",
-      lg: "",
+      small: "px-2 py-1 text-sm",
+      medium: "px-4 py-2",
+      large: "px-6 py-3 text-lg",
     },
   },
 
   defaultVariants: {
-    variant: "primary",
-    size: "md",
+    color: "primary",
+    size: "medium",
   },
 });
 
@@ -36,20 +40,37 @@ const Button: React.FC<
   ButtonProps &
     VariantProps<typeof button> &
     Omit<
-      React.ComponentPropsWithoutRef<"button">,
-      keyof VariantProps<typeof button> | keyof ButtonProps
+      React.ComponentPropsWithoutRef<typeof motion.button>,
+      keyof VariantProps<typeof button> | keyof ButtonProps | "children"
     >
-> = ({ startIcon, endIcon, children, className, variant, size, ...props }) => {
+> = ({
+  startIcon,
+  endIcon,
+  children,
+  className,
+  color,
+  isFullWidth,
+  size,
+  ...props
+}) => {
   return (
-    <button
+    <motion.button
       type="button"
       {...props}
-      className={button({ className, variant, size })}
+      variants={clickableVariants}
+      whileTap="parent"
+      className={button({ color, size, isFullWidth, className })}
     >
-      {startIcon}
-      {children}
-      {endIcon}
-    </button>
+      <motion.span
+        className="flex items-center gap-2"
+        variants={clickableVariants}
+        whileTap="child"
+      >
+        {startIcon}
+        {children}
+        {endIcon}
+      </motion.span>
+    </motion.button>
   );
 };
 
