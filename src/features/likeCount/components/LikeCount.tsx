@@ -1,13 +1,13 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import type { handleLike } from "./test";
 import { useState } from "react";
 import { clickableVariants } from "~/animations/clickable";
+import type { addLike } from "../actions/actions";
 
 interface LikeClientProps {
   like: number;
-  onLike: typeof handleLike;
+  onLike: typeof addLike;
 }
 
 export default function LikeCount({ like, onLike }: LikeClientProps) {
@@ -19,7 +19,7 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
         variants={clickableVariants}
         whileTap="parent"
         type="submit"
-        className="fixed bottom-1 right-0 z-50 m-11 rounded-full bg-[#23252B80] p-3 text-white shadow-inner shadow-[#00000024] backdrop-blur-2xl"
+        className="fixed bottom-0 right-0 z-50 m-11 rounded-full bg-[#23252B80] p-3 text-white shadow-inner shadow-[#00000024] backdrop-blur-2xl"
         onClick={() => {
           setCurrentLike(prev => prev + 1);
         }}
@@ -36,7 +36,7 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <g clip-path="url(#clip0_189_5312)">
+            <g clipPath="url(#clip0_189_5312)">
               <mask
                 id="mask0_189_5312"
                 // style="mask-type:luminance"
@@ -90,27 +90,27 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                   fill="url(#paint8_radial_189_5312)"
                 />
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M4.80626 8.81808C4.74147 8.80377 4.67596 8.79292 4.61001 8.78558C4.70501 8.7887 4.77251 8.8062 4.80626 8.81808ZM4.83126 8.82308L4.89001 8.83808C5.09376 8.89245 5.28126 8.9787 5.40751 9.0912C5.47126 9.14745 5.56689 9.26308 5.69001 9.43808C5.81001 9.60745 5.94189 9.81308 6.07876 10.0337C6.19001 10.2125 6.30501 10.4031 6.41751 10.59C6.57689 10.8537 6.73064 11.1075 6.85689 11.3025C6.90189 11.3721 6.97271 11.421 7.05376 11.4384C7.13481 11.4558 7.21945 11.4403 7.28907 11.3953C7.35869 11.3503 7.40758 11.2794 7.42499 11.1984C7.44239 11.1173 7.42689 11.0327 7.38189 10.9631C7.23881 10.7382 7.099 10.5113 6.96251 10.2825C6.85001 10.0956 6.73126 9.89933 6.61001 9.70433C6.47969 9.49176 6.34339 9.28293 6.20126 9.07808C6.07501 8.89933 5.94439 8.73183 5.82314 8.6237C5.59814 8.4237 5.30814 8.30245 5.05126 8.23433C4.86489 8.18393 4.67304 8.15664 4.48001 8.15308C4.49411 8.18883 4.51039 8.22369 4.52876 8.25745C4.76001 8.68683 4.82001 8.8012 4.83126 8.82308Z"
                   fill="url(#paint9_radial_189_5312)"
                 />
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M5.86126 6.37434C5.81489 6.36153 5.7677 6.35193 5.72001 6.34559C5.76826 6.34812 5.81586 6.35781 5.86126 6.37434ZM5.88126 6.37996C6.05626 6.43121 6.26564 6.53746 6.50126 6.74746C6.51939 6.76309 6.56126 6.80996 6.62814 6.90434C6.69064 6.99309 6.76564 7.10684 6.84814 7.24184C7.01439 7.51059 7.20751 7.84809 7.40439 8.20059C7.50876 8.38559 7.61439 8.57559 7.71689 8.76184C8.00064 9.27309 8.26626 9.75246 8.42939 10.0037C8.45094 10.0397 8.47952 10.071 8.51342 10.0957C8.54733 10.1205 8.58586 10.1381 8.62673 10.1476C8.6676 10.1571 8.70997 10.1583 8.7513 10.1511C8.79264 10.1438 8.83209 10.1284 8.86732 10.1056C8.90255 10.0828 8.93282 10.0531 8.95634 10.0184C8.97986 9.98361 8.99613 9.94448 9.0042 9.9033C9.01227 9.86213 9.01196 9.81975 9.00329 9.77869C8.99463 9.73763 8.97778 9.69874 8.95376 9.66434C8.80376 9.43184 8.55564 8.98559 8.27814 8.48434L7.95001 7.89496C7.76654 7.56413 7.5765 7.23698 7.38001 6.91371C7.30328 6.78733 7.2224 6.66352 7.13751 6.54246C7.07347 6.4474 6.99951 6.35941 6.91689 6.27996C6.41939 5.83809 5.96064 5.71559 5.60626 5.71246C5.62314 5.95996 5.71564 6.19559 5.88126 6.37996Z"
                   fill="url(#paint10_radial_189_5312)"
                 />
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M8.25125 5.25997L8.30813 5.35247L9.0975 6.61997C9.57955 7.39727 10.0656 8.17207 10.5556 8.94435C10.6012 9.01281 10.6719 9.06055 10.7524 9.07722C10.8329 9.0939 10.9168 9.07816 10.9858 9.03342C11.0548 8.98868 11.1034 8.91855 11.121 8.83823C11.1386 8.75791 11.1239 8.67388 11.08 8.60435C10.5919 7.83537 10.1077 7.0639 9.6275 6.28997L8.83938 5.02247L8.58938 4.61935L8.575 4.59747C8.4145 4.78848 8.30333 5.01597 8.25125 5.25997Z"
                   fill="url(#paint11_radial_189_5312)"
                 />
                 <g filter="url(#filter0_f_189_5312)">
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M14.4706 8.54373L14.5594 13.945C14.6763 15.4062 13.8438 16.9812 12.6163 17.7269C12.385 17.8675 12.1419 17.9806 11.8925 18.0675C10.5463 18.0812 9.20314 17.4587 8.43251 16.3669L6.90814 14.2894L5.91564 12.5675C5.64564 12.1244 5.80001 11.2656 6.23064 10.9762C6.83251 10.5719 7.21439 10.7519 7.21439 10.7519C7.21439 10.7519 6.72064 9.95748 6.47376 9.49873C6.22626 9.04061 6.35876 8.34186 6.80189 8.07123C7.36939 7.72498 7.83251 8.13248 7.86126 8.16436C7.49001 7.66123 7.46001 6.53123 8.14439 6.11311C8.55689 5.86123 9.30376 5.80248 9.57439 6.24561L9.93376 6.71311C9.93376 6.71311 10.03 6.16498 10.4731 5.89436L10.5106 5.87311L12.0056 8.54436C12.0056 8.54436 12.0369 7.75436 12.6869 7.45498L13.7806 9.40873C13.7806 9.40873 13.81 8.63998 14.4331 8.32498C14.4506 8.39998 14.4625 8.47373 14.4706 8.54373Z"
                     fill="#F06B0C"
                   />
@@ -209,58 +209,58 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                   <path
                     d="M9.10187 6.81622C9.36874 6.8356 9.59187 6.87685 9.90437 7.36122C10.2169 7.8456 11.2194 9.48997 11.7406 10.3106"
                     stroke="#FFE240"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </g>
                 <g filter="url(#filter3_f_189_5312)">
                   <path
                     d="M8.06625 9.21875C8.33313 9.23812 8.55688 9.27937 8.86938 9.76375C9.18188 10.2481 9.7525 11.3675 10.2731 12.1875"
                     stroke="#FFE240"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </g>
                 <g filter="url(#filter4_f_189_5312)">
                   <path
                     d="M8.75 7.83185C9.01687 7.85122 9.31875 7.96247 9.63125 8.44685C9.94375 8.93122 10.6125 10.2931 11.1325 11.1131"
                     stroke="url(#paint30_linear_189_5312)"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </g>
                 <g filter="url(#filter5_f_189_5312)">
                   <path
                     d="M9.84375 5.50812C10.1106 5.52687 10.7444 5.72687 11.0569 6.21062C11.3694 6.69499 12.2525 8.39812 12.7737 9.21874"
                     stroke="url(#paint31_linear_189_5312)"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </g>
                 <g filter="url(#filter6_f_189_5312)">
                   <path
                     d="M10.4863 4.86438C10.7531 4.88375 10.9769 4.925 11.2894 5.40938C11.6019 5.89375 13.3269 8.49625 13.8475 9.31625"
                     stroke="#FFE240"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </g>
                 <g filter="url(#filter7_f_189_5312)">
                   <path
                     d="M12.8269 4.71875C13.0937 4.73875 13.3169 4.77937 13.6294 5.26375C13.9419 5.74812 15.6869 8.99437 16.2075 9.81437"
                     stroke="#FFE240"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </g>
                 <g filter="url(#filter8_f_189_5312)">
                   <path
                     d="M17.7162 7.40125C17.9381 7.55125 18.1112 7.69812 18.1412 8.27375C18.17 8.84937 18.0637 12.5331 18.1062 13.5037"
                     stroke="#FFE240"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </g>
               </g>
@@ -273,9 +273,9 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 width="13.7887"
                 height="17.1946"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend
                   mode="normal"
                   in="SourceGraphic"
@@ -294,9 +294,9 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 width="13.1601"
                 height="15.7131"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend
                   mode="normal"
                   in="SourceGraphic"
@@ -315,9 +315,9 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 width="5.63885"
                 height="6.49445"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend
                   mode="normal"
                   in="SourceGraphic"
@@ -336,9 +336,9 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 width="5.20697"
                 height="5.96881"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend
                   mode="normal"
                   in="SourceGraphic"
@@ -357,9 +357,9 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 width="5.38266"
                 height="6.28143"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend
                   mode="normal"
                   in="SourceGraphic"
@@ -378,9 +378,9 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 width="5.93015"
                 height="6.71082"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend
                   mode="normal"
                   in="SourceGraphic"
@@ -399,9 +399,9 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 width="6.36136"
                 height="7.45197"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend
                   mode="normal"
                   in="SourceGraphic"
@@ -420,9 +420,9 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 width="6.38071"
                 height="8.0957"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend
                   mode="normal"
                   in="SourceGraphic"
@@ -441,9 +441,9 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 width="3.42996"
                 height="9.1026"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend
                   mode="normal"
                   in="SourceGraphic"
@@ -463,8 +463,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 y2="9.6875"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#FF6C4C" />
-                <stop offset="1" stop-color="#FF6D47" stop-opacity="0" />
+                <stop stopColor="#FF6C4C" />
+                <stop offset="1" stopColor="#FF6D47" stopOpacity="0" />
               </linearGradient>
               <radialGradient
                 id="paint1_radial_189_5312"
@@ -474,8 +474,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(6.54314 8.0075) rotate(58.4429) scale(2.91095 1.16366)"
               >
-                <stop stop-color="#FFAF33" />
-                <stop offset="1" stop-color="#FA8221" />
+                <stop stopColor="#FFAF33" />
+                <stop offset="1" stopColor="#FA8221" />
               </radialGradient>
               <radialGradient
                 id="paint2_radial_189_5312"
@@ -485,8 +485,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(5.84001 7.07063) rotate(92.0826) scale(1.07493 1.06932)"
               >
-                <stop stop-color="#FFAE28" />
-                <stop offset="1" stop-color="#FFAF31" stop-opacity="0" />
+                <stop stopColor="#FFAE28" />
+                <stop offset="1" stopColor="#FFAF31" stopOpacity="0" />
               </radialGradient>
               <radialGradient
                 id="paint3_radial_189_5312"
@@ -496,8 +496,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(5.0782 10.1362) rotate(57.331) scale(3.03942 0.870644)"
               >
-                <stop stop-color="#FE9E29" />
-                <stop offset="1" stop-color="#FE9E28" stop-opacity="0" />
+                <stop stopColor="#FE9E29" />
+                <stop offset="1" stopColor="#FE9E28" stopOpacity="0" />
               </radialGradient>
               <radialGradient
                 id="paint4_radial_189_5312"
@@ -507,8 +507,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(4.88314 9.805) rotate(63.435) scale(1.26652 1.03543)"
               >
-                <stop stop-color="#FF9D25" />
-                <stop offset="1" stop-color="#FF9F24" stop-opacity="0" />
+                <stop stopColor="#FF9D25" />
+                <stop offset="1" stopColor="#FF9F24" stopOpacity="0" />
               </radialGradient>
               <radialGradient
                 id="paint5_radial_189_5312"
@@ -518,8 +518,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(7.36314 5.48813) rotate(58.3393) scale(2.75356 1.19003)"
               >
-                <stop stop-color="#FFC133" />
-                <stop offset="1" stop-color="#FFC93C" stop-opacity="0" />
+                <stop stopColor="#FFC133" />
+                <stop offset="1" stopColor="#FFC93C" stopOpacity="0" />
               </radialGradient>
               <radialGradient
                 id="paint6_radial_189_5312"
@@ -529,8 +529,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(7.24626 4.98063) rotate(52.3738) scale(1.1837 0.904579)"
               >
-                <stop stop-color="#FFC53A" />
-                <stop offset="1" stop-color="#FFC83C" stop-opacity="0" />
+                <stop stopColor="#FFC53A" />
+                <stop offset="1" stopColor="#FFC83C" stopOpacity="0" />
               </radialGradient>
               <radialGradient
                 id="paint7_radial_189_5312"
@@ -540,8 +540,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(9.49252 6.95313) rotate(90.6384) scale(23.2046 20.0669)"
               >
-                <stop offset="0.37" stop-color="#FF6C5E" stop-opacity="0" />
-                <stop offset="0.54" stop-color="#FF6B5E" />
+                <stop offset="0.37" stopColor="#FF6C5E" stopOpacity="0" />
+                <stop offset="0.54" stopColor="#FF6B5E" />
               </radialGradient>
               <radialGradient
                 id="paint8_radial_189_5312"
@@ -551,8 +551,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(9.43314 4.4725) rotate(59.816) scale(2.21429 2.43497)"
               >
-                <stop stop-color="#FFAC31" />
-                <stop offset="1" stop-color="#FFA92E" stop-opacity="0" />
+                <stop stopColor="#FFAC31" />
+                <stop offset="1" stopColor="#FFA92E" stopOpacity="0" />
               </radialGradient>
               <radialGradient
                 id="paint9_radial_189_5312"
@@ -562,9 +562,9 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(5.80064 10.43) rotate(-35.0958) scale(0.883236 2.70968)"
               >
-                <stop stop-color="#DB5703" />
-                <stop offset="0.595" stop-color="#C94A04" />
-                <stop offset="1" stop-color="#D65A05" stop-opacity="0" />
+                <stop stopColor="#DB5703" />
+                <stop offset="0.595" stopColor="#C94A04" />
+                <stop offset="1" stopColor="#D65A05" stopOpacity="0" />
               </radialGradient>
               <radialGradient
                 id="paint10_radial_189_5312"
@@ -574,9 +574,9 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(6.66001 8.53496) rotate(-42.6141) scale(1.32698 4.25861)"
               >
-                <stop stop-color="#DB5703" />
-                <stop offset="0.595" stop-color="#C94A04" />
-                <stop offset="1" stop-color="#D65A05" stop-opacity="0" />
+                <stop stopColor="#DB5703" />
+                <stop offset="0.595" stopColor="#C94A04" />
+                <stop offset="1" stopColor="#D65A05" stopOpacity="0" />
               </radialGradient>
               <radialGradient
                 id="paint11_radial_189_5312"
@@ -586,9 +586,9 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(8.75 7.1681) rotate(-42.1844) scale(0.84347 2.76925)"
               >
-                <stop stop-color="#DB5703" />
-                <stop offset="0.595" stop-color="#C94A04" />
-                <stop offset="1" stop-color="#D65A05" stop-opacity="0" />
+                <stop stopColor="#DB5703" />
+                <stop offset="0.595" stopColor="#C94A04" />
+                <stop offset="1" stopColor="#D65A05" stopOpacity="0" />
               </radialGradient>
               <radialGradient
                 id="paint12_radial_189_5312"
@@ -598,9 +598,9 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(14.1019 12.5781) rotate(73.365) scale(6.68606 4.43794)"
               >
-                <stop stop-color="#FFD945" />
-                <stop offset="0.633" stop-color="#FFD343" />
-                <stop offset="1" stop-color="#FFD543" stop-opacity="0" />
+                <stop stopColor="#FFD945" />
+                <stop offset="0.633" stopColor="#FFD343" />
+                <stop offset="1" stopColor="#FFD543" stopOpacity="0" />
               </radialGradient>
               <radialGradient
                 id="paint13_radial_189_5312"
@@ -610,8 +610,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(18.7331 9.8831) rotate(98.436) scale(9.20113 2.42988)"
               >
-                <stop stop-color="#FFE044" />
-                <stop offset="1" stop-color="#FFE143" stop-opacity="0" />
+                <stop stopColor="#FFE044" />
+                <stop offset="1" stopColor="#FFE143" stopOpacity="0" />
               </radialGradient>
               <radialGradient
                 id="paint14_radial_189_5312"
@@ -621,8 +621,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(12.9302 20.7809) rotate(-124.618) scale(14.7145 11.5806)"
               >
-                <stop stop-color="#FA825D" />
-                <stop offset="0.883" stop-color="#F67B7D" stop-opacity="0" />
+                <stop stopColor="#FA825D" />
+                <stop offset="0.883" stopColor="#F67B7D" stopOpacity="0" />
               </radialGradient>
               <linearGradient
                 id="paint15_linear_189_5312"
@@ -632,13 +632,9 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 y2="8.27121"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#D48820" />
-                <stop
-                  offset="0.345"
-                  stop-color="#E39C2A"
-                  stop-opacity="0.649"
-                />
-                <stop offset="0.735" stop-color="#FFC03C" stop-opacity="0" />
+                <stop stopColor="#D48820" />
+                <stop offset="0.345" stopColor="#E39C2A" stopOpacity="0.649" />
+                <stop offset="0.735" stopColor="#FFC03C" stopOpacity="0" />
               </linearGradient>
               <radialGradient
                 id="paint16_radial_189_5312"
@@ -648,10 +644,10 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(15.3518 12.7734) rotate(134.506) scale(6.40837 16.7667)"
               >
-                <stop stop-color="#FFDB45" />
-                <stop offset="0.484" stop-color="#FFD646" />
-                <stop offset="0.915" stop-color="#FFDA45" stop-opacity="0" />
-                <stop offset="0.97" stop-color="#FFDA45" stop-opacity="0" />
+                <stop stopColor="#FFDB45" />
+                <stop offset="0.484" stopColor="#FFD646" />
+                <stop offset="0.915" stopColor="#FFDA45" stopOpacity="0" />
+                <stop offset="0.97" stopColor="#FFDA45" stopOpacity="0" />
               </radialGradient>
               <linearGradient
                 id="paint17_linear_189_5312"
@@ -661,8 +657,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 y2="3.16557"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#2065A3" />
-                <stop offset="1" stop-color="#2067AE" stop-opacity="0" />
+                <stop stopColor="#2065A3" />
+                <stop offset="1" stopColor="#2067AE" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="paint18_linear_189_5312"
@@ -672,8 +668,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 y2="3.66995"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0.605" stop-color="#1C60FF" />
-                <stop offset="1" stop-color="#1963FF" stop-opacity="0" />
+                <stop offset="0.605" stopColor="#1C60FF" />
+                <stop offset="1" stopColor="#1963FF" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="paint19_linear_189_5312"
@@ -683,8 +679,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 y2="2.99432"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#2093F1" />
-                <stop offset="1" stop-color="#2294F3" stop-opacity="0" />
+                <stop stopColor="#2093F1" />
+                <stop offset="1" stopColor="#2294F3" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="paint20_linear_189_5312"
@@ -694,8 +690,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 y2="1.72185"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#2065A3" />
-                <stop offset="1" stop-color="#2067AE" stop-opacity="0" />
+                <stop stopColor="#2065A3" />
+                <stop offset="1" stopColor="#2067AE" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="paint21_linear_189_5312"
@@ -705,8 +701,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 y2="2.61748"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0.605" stop-color="#1C60FF" />
-                <stop offset="1" stop-color="#1963FF" stop-opacity="0" />
+                <stop offset="0.605" stopColor="#1C60FF" />
+                <stop offset="1" stopColor="#1963FF" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="paint22_linear_189_5312"
@@ -716,8 +712,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 y2="1.8956"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#2093F1" />
-                <stop offset="1" stop-color="#2294F3" stop-opacity="0" />
+                <stop stopColor="#2093F1" />
+                <stop offset="1" stopColor="#2294F3" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="paint23_linear_189_5312"
@@ -727,8 +723,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 y2="5.21498"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#2065A3" />
-                <stop offset="1" stop-color="#2067AE" stop-opacity="0" />
+                <stop stopColor="#2065A3" />
+                <stop offset="1" stopColor="#2067AE" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="paint24_linear_189_5312"
@@ -738,8 +734,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 y2="5.58623"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0.605" stop-color="#1C60FF" />
-                <stop offset="1" stop-color="#1963FF" stop-opacity="0" />
+                <stop offset="0.605" stopColor="#1C60FF" />
+                <stop offset="1" stopColor="#1963FF" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="paint25_linear_189_5312"
@@ -749,8 +745,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 y2="4.94873"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#2093F1" />
-                <stop offset="1" stop-color="#2294F3" stop-opacity="0" />
+                <stop stopColor="#2093F1" />
+                <stop offset="1" stopColor="#2294F3" stopOpacity="0" />
               </linearGradient>
               <radialGradient
                 id="paint26_radial_189_5312"
@@ -760,8 +756,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(9.16063 9.78874) rotate(57.126) scale(3.27448 0.613401)"
               >
-                <stop stop-color="#B64200" />
-                <stop offset="1" stop-color="#FFB02E" stop-opacity="0" />
+                <stop stopColor="#B64200" />
+                <stop offset="1" stopColor="#FFB02E" stopOpacity="0" />
               </radialGradient>
               <radialGradient
                 id="paint27_radial_189_5312"
@@ -771,8 +767,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(10.5077 7.70531) rotate(57.5209) scale(3.85552 0.717687)"
               >
-                <stop stop-color="#B64200" />
-                <stop offset="1" stop-color="#FFB02E" stop-opacity="0" />
+                <stop stopColor="#B64200" />
+                <stop offset="1" stopColor="#FFB02E" stopOpacity="0" />
               </radialGradient>
               <radialGradient
                 id="paint28_radial_189_5312"
@@ -782,8 +778,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(10.5077 7.70532) rotate(57.521) scale(3.85553 0.717687)"
               >
-                <stop stop-color="#B64200" />
-                <stop offset="1" stop-color="#FFB02E" stop-opacity="0" />
+                <stop stopColor="#B64200" />
+                <stop offset="1" stopColor="#FFB02E" stopOpacity="0" />
               </radialGradient>
               <linearGradient
                 id="paint29_linear_189_5312"
@@ -793,8 +789,8 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 y2="6.21121"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#E49224" />
-                <stop offset="0.589" stop-color="#FFB02E" stop-opacity="0" />
+                <stop stopColor="#E49224" />
+                <stop offset="0.589" stopColor="#FFB02E" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="paint30_linear_189_5312"
@@ -804,9 +800,9 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 y2="8.49622"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#FDB137" />
-                <stop offset="0.447" stop-color="#FFBA3C" stop-opacity="0" />
-                <stop offset="1" stop-color="#FCAD33" stop-opacity="0" />
+                <stop stopColor="#FDB137" />
+                <stop offset="0.447" stopColor="#FFBA3C" stopOpacity="0" />
+                <stop offset="1" stopColor="#FCAD33" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="paint31_linear_189_5312"
@@ -816,9 +812,9 @@ export default function LikeCount({ like, onLike }: LikeClientProps) {
                 y2="6.26062"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#FDB137" />
-                <stop offset="0.447" stop-color="#FFBA3C" stop-opacity="0" />
-                <stop offset="1" stop-color="#FCAD33" stop-opacity="0" />
+                <stop stopColor="#FDB137" />
+                <stop offset="0.447" stopColor="#FFBA3C" stopOpacity="0" />
+                <stop offset="1" stopColor="#FCAD33" stopOpacity="0" />
               </linearGradient>
               <clipPath id="clip0_189_5312">
                 <rect width="20" height="20" fill="white" />

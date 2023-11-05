@@ -7,5 +7,5 @@ import { addLike } from "../actions/actions";
 export default async function LikeCountProvider() {
   const like = await db.select().from(likeSchema);
 
-  return <LikeCount like={like[0].count ?? 0} onLike={addLike} />;
+  return <LikeCount like={like[0]?.count ?? 0} onLike={addLike} />;
 }
