@@ -25,7 +25,8 @@ const Home = () => {
           Mes projets
         </Button>
 
-        <Technology name="ESLint" />
+        <Technology name="React" count={2} />
+        <Technology name="React" />
         <TechStack technologies={["NextJS", "React", "TypeScript"]} />
         <TechStackIcon name="NextJS" />
       </div>
