@@ -13,7 +13,11 @@ const TechStack: React.FC<
   return (
     <div {...props} className="flex -space-x-8 duration-150 hover:-space-x-4">
       {technologies.map(technology => (
-        <TechStackIcon name={technology} key={technology} />
+        <TechStackIcon
+          name={technology}
+          key={technology}
+          className="transition-all"
+        />
       ))}
     </div>
   );

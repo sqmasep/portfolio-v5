@@ -32,7 +32,11 @@ const TechStackIcon: React.FC<
   const found = technologies.find(technology => technology.name === name);
 
   return (
-    <button type="button" {...props} className={techStackIcon({ variant })}>
+    <button
+      type="button"
+      {...props}
+      className={techStackIcon({ variant, className: props.className })}
+    >
       <img width={32} height={32} src={ReactIcon.src} />
     </button>
   );
